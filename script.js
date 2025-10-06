@@ -91,7 +91,9 @@ function displayForecast(data) {
   forecastContainer.innerHTML = "";
 
   // Filter one forecast per day (midday)
-  const daily = data.list.filter((reading) => reading.dt_txt.includes("12:00:00"));
+  const daily = data.list.filter((reading) =>
+    reading.dt_txt.includes("12:00:00")
+  );
 
   daily.slice(0, 5).forEach((day) => {
     const date = new Date(day.dt_txt);
@@ -141,7 +143,11 @@ function displayNews(articles) {
     newsItem.classList.add("news-item");
 
     newsItem.innerHTML = `
-      ${article.urlToImage ? `<img src="${article.urlToImage}" alt="${article.title}">` : ""}
+      ${
+        article.urlToImage
+          ? `<img src="${article.urlToImage}" alt="${article.title}">`
+          : ""
+      }
       <div>
         <h3>${article.title}</h3>
         <p>${article.description || ""}</p>
@@ -155,7 +161,9 @@ function displayNews(articles) {
 
 // ====== FOOTER YEAR ======
 const year = new Date().getFullYear();
-document.querySelector("#footer p").innerHTML = `&copy; ${year} Weather & News App`;
+document.querySelector(
+  "#footer p"
+).innerHTML = `&copy; ${year} Weather & News App`;
 
 // ====== INITIAL LOAD ======
 getWeather("Tooele");
