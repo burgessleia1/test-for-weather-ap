@@ -1,5 +1,15 @@
 const apiKey = "b1122ec5871b8915791ca0070108b396";
-const city = "tooele"; // You can change this to your city
+const city = "tooele"; 
+
+document.getElementById("getWeather").addEventListener("click", () => {
+  const city = document.getElementById("cityInput").value.trim();
+  if (city) {
+    getWeather(city);
+  } else {
+    alert("Please enter a city name!");
+  }
+});
+
 
 const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
@@ -85,4 +95,5 @@ function displayNews(articles) {
 
 // Dynamic Footer Year
 const year = new Date().getFullYear();
-document.querySelector("#footer").textContent = `© ${year} Weather & News App`;
+document.querySelector("#footer p").innerHTML = `&copy; ${year} Weather & News App`;
+
