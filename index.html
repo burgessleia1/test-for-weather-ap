@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather & News App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Weather and News App</h1>
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <button id="getWeather">Get Weather</button>
+    </header>
+
+    <main>
+      <!-- Current Weather -->
+      <section id="stats">
+        <h2 id="summary"></h2>
+        <p id="current-desc"></p>
+        <p id="current-temp"></p>
+        <p id="current-humid"></p>
+        <p id="current-windSpeed"></p>
+        <p id="current-windChill"></p>
+      </section>
+
+      <!-- 5-Day Forecast -->
+      <section id="forecast">
+        <h2>5-Day Forecast</h2>
+        <div id="forecast-container"></div>
+      </section>
+
+      <!-- News Section -->
+      <section id="news">
+        <h2>Top Headlines</h2>
+        <div id="news-container"></div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <p>&copy; 2025 Weather & News App</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
